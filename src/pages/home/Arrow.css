@@ -1,0 +1,100 @@
+/* Arrow animation */
+
+@keyframes ArrowZoomIn {
+    0% {
+        opacity: 0;
+        transform: scale3d(.4, .4, .4);
+    }
+  
+    50% {
+        opacity: 0.5;
+    }
+    
+    100% {
+        opacity: 0;
+    }
+  }
+
+.ArrowWrapper {
+    width: 65px;
+    height: 65px;
+    position: relative;
+}
+
+.Arrow1 {
+    border: 0px solid black;
+    background: hsl(120, 100%, 30%);
+    border-radius: 50%;
+    position: absolute;
+    width: 60%;
+    height: 60%;
+    top: 20%;
+    left: 20%;
+    z-index: 1;
+    display: flex;
+}
+
+.Arrow1::before {
+    width: 52%;
+    height: 52%;
+    content: "";
+    border: 2% solid white;
+    border-radius: 50%;
+    position: absolute;
+    top: 2%;
+    left: 2%;
+}
+
+.Arrow1::after {
+    top: -33%;
+    left: -33%;
+    content: "";
+    width: 166%;
+    height: 166%;
+    background: hsl(120, 100%, 30%);
+    opacity: 0.5;
+    border-radius: 50%;
+    position: absolute;
+    z-index: -2;
+
+    animation: ArrowZoomIn 3.5s infinite;
+}
+
+.Arrow1 svg {
+    margin: auto;
+    color: white;
+    font-size: 100%;
+}
+
+/* tooltip */
+
+@keyframes ArrowTooltipFadeIn {
+    from { opacity: 0;}
+    to { opacity: 1;}
+}
+
+.ArrowTooltip {
+    position: absolute;
+    top: -80%;
+    left: 10%;
+    padding: 10%;
+    background: hsl(120, 100%, 25%);
+    color: white;
+    z-index: 5;
+    border-radius: 5%;
+    font-size: 1rem;
+    width: max-content;
+
+    animation: ArrowTooltipFadeIn 0.4s ease-in 1;
+}
+
+.ArrowTooltip::before {
+    z-index: 4;
+    content: "";
+    width: 10px;
+    height: 10px;
+    background: hsl(120, 100%, 25%);
+    position: absolute;
+    top: 80%;
+    transform: rotate(45deg);
+}
