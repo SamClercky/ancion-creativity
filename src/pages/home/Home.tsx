@@ -18,12 +18,10 @@ export default class HomePage extends React.Component<IHomePageProps, {}> {
                     <Logo />
                 </div>
                 <div className="HomePageBottomSection">
-                    <Link to="/">
-                        <Arrow direction={ArrowDirection.left} className="HomePageArrowDown" label="TODO" />
-                    </Link>
                     <Link to="/aboutme">
-                        <Arrow direction={ArrowDirection.down} className="HomePageArrowDown" label="About me" />
+                        <Arrow direction={ArrowDirection.left} className="HomePageArrowDown" label="About me" />
                     </Link>
+                    
                     <Link to="/showcase">
                         <Arrow direction={ArrowDirection.right} className="HomePageArrowDown" label="Showcase" />
                     </Link>

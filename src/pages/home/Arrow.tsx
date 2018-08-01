@@ -1,8 +1,5 @@
 import * as React from "react"
 
-import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
-import { IconProp } from "@fortawesome/fontawesome-svg-core";
-
 import "./Arrow.css"
 
 export enum ArrowDirection {
@@ -46,20 +43,18 @@ export default class Arrow extends React.Component<IArrowProps, IArrowState> {
     }
 
     public render() {
+        let mirrorClass = (this.props.direction == ArrowDirection.left)? "ArrowMirror" : "";
 
-        const toolTip = this.state.isHovered? <p className="ArrowTooltip">{this.props.label}</p> : null
-
-        // taken example of https://codepen.io/Hoebink/pen/YwpxMW
+        // taken example of https://codepen.io/shawnlooi/pen/eeXmrQ
         return (
             <div
-                className={"ArrowWrapper " + this.props.className}
+                className={"ArrowWrapper " + mirrorClass + " " + this.props.className}
                 onMouseOver={this.onMouseOver}
                 onMouseOut={this.onMouseOut}
             >
-                <div className="Arrow1">
-                    <FontAwesomeIcon className="ArrowFaIcon" size="lg" icon={this.props.direction as IconProp} />
-                </div>
-                {toolTip}
+                <div className="Arrow -left" />
+                <p className={mirrorClass}>{this.props.label}</p>
+                <div className="Arrow -right" />
             </div>
         )
     }

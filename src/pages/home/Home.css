@@ -27,6 +27,7 @@
 }
 .HomePageBottomSection a {
     margin: auto;
+    text-decoration: none;
 }
 .HomePageBottomSection a:first-child {
     margin-left: 10%;
