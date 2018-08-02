@@ -13,7 +13,7 @@ export interface IHomePageProps {
 export default class HomePage extends React.Component<IHomePageProps, {}> {
     public render() {
         return (
-            <div id="HomePageWrapper" className={this.props.className}>
+            <section id="Home" className={this.props.className}>
                 <div className="HomePageCenterSection">
                     <Logo />
                 </div>
@@ -26,20 +26,7 @@ export default class HomePage extends React.Component<IHomePageProps, {}> {
                         <Arrow direction={ArrowDirection.right} className="HomePageArrowDown" label="Showcase" />
                     </Link>
                 </div>
-            </div>
+            </section>
         )
     }
 }
-
-/*
-<div className="HomePageSideSection">
-                        <Link to="/">
-                            <Arrow direction={ArrowDirection.left} className="HomePageArrowDown" label="TODO" />
-                        </Link>
-                    </div>
-
-                    <div className="HomePageSideSection">
-                        <Link to="/showcase">
-                            <Arrow direction={ArrowDirection.right} className="HomePageArrowDown" label="Showcase" />
-                        </Link>
-                    </div>*/

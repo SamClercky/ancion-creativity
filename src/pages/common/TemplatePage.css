@@ -1,0 +1,70 @@
+section {
+    width: 100%;
+    height: 100%;
+    overflow: scroll;
+}
+
+section > .TemplateWrapper {
+    width: 80%;
+    margin: 0 auto auto auto;
+    min-height: 100%;
+    display: grid;
+
+    grid-template-columns: 1fr;
+    grid-template-rows: minmax(auto, 4em) minmax(80vh, auto) auto;
+    grid-template-areas:
+        "header"
+        "content"
+        "footer";
+}
+
+header {
+    display: flex;
+    position: relative;
+    grid-area: header;
+    align-items: center;
+    padding: 10px;
+    border-bottom: 1px solid #4c4c4c;
+}
+header a.backArrow {
+    position: relative;
+    width: 1em;
+    height: 3px;
+    background: rgba(0,0,0,0);  
+}
+header a.backArrow::before {
+    content: "";
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    background: #4c4c4c;
+    transform-origin: left center;
+    transform: rotate(60deg);
+}
+header a.backArrow::after {
+    content: "";
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    background: #4c4c4c;
+    transform-origin: left center;
+    transform: rotate(-60deg);
+}
+header a.logo {
+    margin-right: 0;
+    margin-left: auto;
+    width: max-content;
+    height: 100%;
+}
+header a.logo img {
+    height: 100%;
+}
+
+div.content {
+    grid-area: content;
+}
+
+footer {
+    display: flex;
+    grid-area: footer;
+}

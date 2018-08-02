@@ -18,6 +18,7 @@
     }
 }
 .LogoSvg .particle {
+    will-change: transform;
     position: relative;
     opacity: 1;
     stroke-opacity: 1;
