@@ -1,68 +1,42 @@
 import * as React from "react"
 
 import TemplatePage from "../common/TemplatePage"
+import FilterEngine from "./FilterEngine";
+import ShowcaseData, { IData } from "./ShowcaseData";
 
 export default class Showcase extends React.Component {
     public render() {
+        //this.test()
         return (
             <TemplatePage title="Showcase" sectionId="showcase">
-                <h1>Showcase</h1>
-                <p>
-                    Lorem ipsum dolor sit amet, consectetur adipiscing elit. Etiam sed ex rhoncus, iaculis arcu nec, faucibus risus. Nunc quis libero a lorem efficitur lobortis et id tellus. Praesent a facilisis nisl. Mauris a accumsan ex. Integer sit amet ligula a mauris congue bibendum a sed ex. Aliquam efficitur egestas diam a ornare. Nulla id erat sem. Phasellus libero erat, ullamcorper eleifend pulvinar ac, consectetur a ipsum.
-    
-    Curabitur auctor nisl at est eleifend tincidunt. Nulla nec condimentum quam. Nullam eu arcu nec libero sodales auctor. Aliquam vitae condimentum purus. Sed sit amet posuere risus. Nunc eget suscipit arcu, et feugiat urna. Nullam nec iaculis diam. Donec consequat dignissim luctus. Pellentesque id metus sit amet risus interdum iaculis in vel nisl.
-    
-    Quisque sed urna nec elit tincidunt lacinia. Donec tempor viverra ipsum eget auctor. Vestibulum pellentesque rhoncus justo lacinia faucibus. Curabitur in leo congue, eleifend turpis sed, accumsan sapien. Fusce ac sollicitudin nunc. Nullam pulvinar vulputate urna, at fermentum massa egestas non. Vivamus auctor tempor aliquam. Ut blandit, quam a dictum interdum, turpis ex rhoncus dolor, ac elementum eros neque vel magna. Cras nibh erat, varius non convallis quis, placerat id dui. Nunc pellentesque eget purus ac accumsan. Nunc condimentum nulla nibh, eu dapibus mi laoreet pellentesque. Morbi mi lectus, scelerisque nec interdum nec, molestie id nibh.
-    
-    Interdum et malesuada fames ac ante ipsum primis in faucibus. Vivamus sed dapibus mi, vitae vulputate tortor. Duis pellentesque tincidunt odio, in sodales nunc tristique ut. Donec condimentum mattis tortor, quis commodo tellus. Nunc lobortis cursus quam molestie suscipit. Nullam auctor semper libero, eget posuere purus fringilla nec. Quisque eget nisl sodales tortor mattis tempus id et nisi. Aenean convallis mattis erat at rutrum. Etiam eu porta sem, eu finibus orci. Integer quis elit porttitor, euismod augue vitae, ultricies nisi. Nulla ut consectetur metus, at euismod enim. Praesent nec lacus aliquet, venenatis turpis in, semper nibh. Etiam viverra dolor tellus, et vestibulum ipsum euismod lacinia. Quisque scelerisque varius scelerisque. Duis sagittis porta porttitor.
-    
-    Suspendisse maximus ante tellus, vel pulvinar orci ultrices nec. Vestibulum at hendrerit augue. Sed in venenatis tortor. Nulla eget magna id velit imperdiet molestie ac congue diam. Nunc ac lacinia ante, aliquet varius est. In rhoncus, felis id aliquet feugiat, nibh mauris vehicula orci, eget sagittis nisi ante vitae ligula. Ut hendrerit arcu non felis iaculis efficitur. Proin malesuada eget dolor in varius. Fusce ultrices dolor in quam condimentum rutrum. Nulla lacinia turpis sit amet justo commodo vestibulum. Maecenas faucibus euismod turpis fermentum bibendum. Nulla blandit accumsan magna, eu facilisis eros dictum vitae. Vivamus et tempus lacus, quis venenatis sem.
-                </p>
-                <p>
-                    Lorem ipsum dolor sit amet, consectetur adipiscing elit. Etiam sed ex rhoncus, iaculis arcu nec, faucibus risus. Nunc quis libero a lorem efficitur lobortis et id tellus. Praesent a facilisis nisl. Mauris a accumsan ex. Integer sit amet ligula a mauris congue bibendum a sed ex. Aliquam efficitur egestas diam a ornare. Nulla id erat sem. Phasellus libero erat, ullamcorper eleifend pulvinar ac, consectetur a ipsum.
-    
-    Curabitur auctor nisl at est eleifend tincidunt. Nulla nec condimentum quam. Nullam eu arcu nec libero sodales auctor. Aliquam vitae condimentum purus. Sed sit amet posuere risus. Nunc eget suscipit arcu, et feugiat urna. Nullam nec iaculis diam. Donec consequat dignissim luctus. Pellentesque id metus sit amet risus interdum iaculis in vel nisl.
-    
-    Quisque sed urna nec elit tincidunt lacinia. Donec tempor viverra ipsum eget auctor. Vestibulum pellentesque rhoncus justo lacinia faucibus. Curabitur in leo congue, eleifend turpis sed, accumsan sapien. Fusce ac sollicitudin nunc. Nullam pulvinar vulputate urna, at fermentum massa egestas non. Vivamus auctor tempor aliquam. Ut blandit, quam a dictum interdum, turpis ex rhoncus dolor, ac elementum eros neque vel magna. Cras nibh erat, varius non convallis quis, placerat id dui. Nunc pellentesque eget purus ac accumsan. Nunc condimentum nulla nibh, eu dapibus mi laoreet pellentesque. Morbi mi lectus, scelerisque nec interdum nec, molestie id nibh.
-    
-    Interdum et malesuada fames ac ante ipsum primis in faucibus. Vivamus sed dapibus mi, vitae vulputate tortor. Duis pellentesque tincidunt odio, in sodales nunc tristique ut. Donec condimentum mattis tortor, quis commodo tellus. Nunc lobortis cursus quam molestie suscipit. Nullam auctor semper libero, eget posuere purus fringilla nec. Quisque eget nisl sodales tortor mattis tempus id et nisi. Aenean convallis mattis erat at rutrum. Etiam eu porta sem, eu finibus orci. Integer quis elit porttitor, euismod augue vitae, ultricies nisi. Nulla ut consectetur metus, at euismod enim. Praesent nec lacus aliquet, venenatis turpis in, semper nibh. Etiam viverra dolor tellus, et vestibulum ipsum euismod lacinia. Quisque scelerisque varius scelerisque. Duis sagittis porta porttitor.
-    
-    Suspendisse maximus ante tellus, vel pulvinar orci ultrices nec. Vestibulum at hendrerit augue. Sed in venenatis tortor. Nulla eget magna id velit imperdiet molestie ac congue diam. Nunc ac lacinia ante, aliquet varius est. In rhoncus, felis id aliquet feugiat, nibh mauris vehicula orci, eget sagittis nisi ante vitae ligula. Ut hendrerit arcu non felis iaculis efficitur. Proin malesuada eget dolor in varius. Fusce ultrices dolor in quam condimentum rutrum. Nulla lacinia turpis sit amet justo commodo vestibulum. Maecenas faucibus euismod turpis fermentum bibendum. Nulla blandit accumsan magna, eu facilisis eros dictum vitae. Vivamus et tempus lacus, quis venenatis sem.
-                </p>
-                <p>
-                    Lorem ipsum dolor sit amet, consectetur adipiscing elit. Etiam sed ex rhoncus, iaculis arcu nec, faucibus risus. Nunc quis libero a lorem efficitur lobortis et id tellus. Praesent a facilisis nisl. Mauris a accumsan ex. Integer sit amet ligula a mauris congue bibendum a sed ex. Aliquam efficitur egestas diam a ornare. Nulla id erat sem. Phasellus libero erat, ullamcorper eleifend pulvinar ac, consectetur a ipsum.
-    
-    Curabitur auctor nisl at est eleifend tincidunt. Nulla nec condimentum quam. Nullam eu arcu nec libero sodales auctor. Aliquam vitae condimentum purus. Sed sit amet posuere risus. Nunc eget suscipit arcu, et feugiat urna. Nullam nec iaculis diam. Donec consequat dignissim luctus. Pellentesque id metus sit amet risus interdum iaculis in vel nisl.
-    
-    Quisque sed urna nec elit tincidunt lacinia. Donec tempor viverra ipsum eget auctor. Vestibulum pellentesque rhoncus justo lacinia faucibus. Curabitur in leo congue, eleifend turpis sed, accumsan sapien. Fusce ac sollicitudin nunc. Nullam pulvinar vulputate urna, at fermentum massa egestas non. Vivamus auctor tempor aliquam. Ut blandit, quam a dictum interdum, turpis ex rhoncus dolor, ac elementum eros neque vel magna. Cras nibh erat, varius non convallis quis, placerat id dui. Nunc pellentesque eget purus ac accumsan. Nunc condimentum nulla nibh, eu dapibus mi laoreet pellentesque. Morbi mi lectus, scelerisque nec interdum nec, molestie id nibh.
-    
-    Interdum et malesuada fames ac ante ipsum primis in faucibus. Vivamus sed dapibus mi, vitae vulputate tortor. Duis pellentesque tincidunt odio, in sodales nunc tristique ut. Donec condimentum mattis tortor, quis commodo tellus. Nunc lobortis cursus quam molestie suscipit. Nullam auctor semper libero, eget posuere purus fringilla nec. Quisque eget nisl sodales tortor mattis tempus id et nisi. Aenean convallis mattis erat at rutrum. Etiam eu porta sem, eu finibus orci. Integer quis elit porttitor, euismod augue vitae, ultricies nisi. Nulla ut consectetur metus, at euismod enim. Praesent nec lacus aliquet, venenatis turpis in, semper nibh. Etiam viverra dolor tellus, et vestibulum ipsum euismod lacinia. Quisque scelerisque varius scelerisque. Duis sagittis porta porttitor.
-    
-    Suspendisse maximus ante tellus, vel pulvinar orci ultrices nec. Vestibulum at hendrerit augue. Sed in venenatis tortor. Nulla eget magna id velit imperdiet molestie ac congue diam. Nunc ac lacinia ante, aliquet varius est. In rhoncus, felis id aliquet feugiat, nibh mauris vehicula orci, eget sagittis nisi ante vitae ligula. Ut hendrerit arcu non felis iaculis efficitur. Proin malesuada eget dolor in varius. Fusce ultrices dolor in quam condimentum rutrum. Nulla lacinia turpis sit amet justo commodo vestibulum. Maecenas faucibus euismod turpis fermentum bibendum. Nulla blandit accumsan magna, eu facilisis eros dictum vitae. Vivamus et tempus lacus, quis venenatis sem.
-                </p>
-                <p>
-                    Lorem ipsum dolor sit amet, consectetur adipiscing elit. Etiam sed ex rhoncus, iaculis arcu nec, faucibus risus. Nunc quis libero a lorem efficitur lobortis et id tellus. Praesent a facilisis nisl. Mauris a accumsan ex. Integer sit amet ligula a mauris congue bibendum a sed ex. Aliquam efficitur egestas diam a ornare. Nulla id erat sem. Phasellus libero erat, ullamcorper eleifend pulvinar ac, consectetur a ipsum.
-    
-    Curabitur auctor nisl at est eleifend tincidunt. Nulla nec condimentum quam. Nullam eu arcu nec libero sodales auctor. Aliquam vitae condimentum purus. Sed sit amet posuere risus. Nunc eget suscipit arcu, et feugiat urna. Nullam nec iaculis diam. Donec consequat dignissim luctus. Pellentesque id metus sit amet risus interdum iaculis in vel nisl.
-    
-    Quisque sed urna nec elit tincidunt lacinia. Donec tempor viverra ipsum eget auctor. Vestibulum pellentesque rhoncus justo lacinia faucibus. Curabitur in leo congue, eleifend turpis sed, accumsan sapien. Fusce ac sollicitudin nunc. Nullam pulvinar vulputate urna, at fermentum massa egestas non. Vivamus auctor tempor aliquam. Ut blandit, quam a dictum interdum, turpis ex rhoncus dolor, ac elementum eros neque vel magna. Cras nibh erat, varius non convallis quis, placerat id dui. Nunc pellentesque eget purus ac accumsan. Nunc condimentum nulla nibh, eu dapibus mi laoreet pellentesque. Morbi mi lectus, scelerisque nec interdum nec, molestie id nibh.
-    
-    Interdum et malesuada fames ac ante ipsum primis in faucibus. Vivamus sed dapibus mi, vitae vulputate tortor. Duis pellentesque tincidunt odio, in sodales nunc tristique ut. Donec condimentum mattis tortor, quis commodo tellus. Nunc lobortis cursus quam molestie suscipit. Nullam auctor semper libero, eget posuere purus fringilla nec. Quisque eget nisl sodales tortor mattis tempus id et nisi. Aenean convallis mattis erat at rutrum. Etiam eu porta sem, eu finibus orci. Integer quis elit porttitor, euismod augue vitae, ultricies nisi. Nulla ut consectetur metus, at euismod enim. Praesent nec lacus aliquet, venenatis turpis in, semper nibh. Etiam viverra dolor tellus, et vestibulum ipsum euismod lacinia. Quisque scelerisque varius scelerisque. Duis sagittis porta porttitor.
-    
-    Suspendisse maximus ante tellus, vel pulvinar orci ultrices nec. Vestibulum at hendrerit augue. Sed in venenatis tortor. Nulla eget magna id velit imperdiet molestie ac congue diam. Nunc ac lacinia ante, aliquet varius est. In rhoncus, felis id aliquet feugiat, nibh mauris vehicula orci, eget sagittis nisi ante vitae ligula. Ut hendrerit arcu non felis iaculis efficitur. Proin malesuada eget dolor in varius. Fusce ultrices dolor in quam condimentum rutrum. Nulla lacinia turpis sit amet justo commodo vestibulum. Maecenas faucibus euismod turpis fermentum bibendum. Nulla blandit accumsan magna, eu facilisis eros dictum vitae. Vivamus et tempus lacus, quis venenatis sem.
-                </p>
-                <p>
-                    Lorem ipsum dolor sit amet, consectetur adipiscing elit. Etiam sed ex rhoncus, iaculis arcu nec, faucibus risus. Nunc quis libero a lorem efficitur lobortis et id tellus. Praesent a facilisis nisl. Mauris a accumsan ex. Integer sit amet ligula a mauris congue bibendum a sed ex. Aliquam efficitur egestas diam a ornare. Nulla id erat sem. Phasellus libero erat, ullamcorper eleifend pulvinar ac, consectetur a ipsum.
-    
-    Curabitur auctor nisl at est eleifend tincidunt. Nulla nec condimentum quam. Nullam eu arcu nec libero sodales auctor. Aliquam vitae condimentum purus. Sed sit amet posuere risus. Nunc eget suscipit arcu, et feugiat urna. Nullam nec iaculis diam. Donec consequat dignissim luctus. Pellentesque id metus sit amet risus interdum iaculis in vel nisl.
-    
-    Quisque sed urna nec elit tincidunt lacinia. Donec tempor viverra ipsum eget auctor. Vestibulum pellentesque rhoncus justo lacinia faucibus. Curabitur in leo congue, eleifend turpis sed, accumsan sapien. Fusce ac sollicitudin nunc. Nullam pulvinar vulputate urna, at fermentum massa egestas non. Vivamus auctor tempor aliquam. Ut blandit, quam a dictum interdum, turpis ex rhoncus dolor, ac elementum eros neque vel magna. Cras nibh erat, varius non convallis quis, placerat id dui. Nunc pellentesque eget purus ac accumsan. Nunc condimentum nulla nibh, eu dapibus mi laoreet pellentesque. Morbi mi lectus, scelerisque nec interdum nec, molestie id nibh.
-    
-    Interdum et malesuada fames ac ante ipsum primis in faucibus. Vivamus sed dapibus mi, vitae vulputate tortor. Duis pellentesque tincidunt odio, in sodales nunc tristique ut. Donec condimentum mattis tortor, quis commodo tellus. Nunc lobortis cursus quam molestie suscipit. Nullam auctor semper libero, eget posuere purus fringilla nec. Quisque eget nisl sodales tortor mattis tempus id et nisi. Aenean convallis mattis erat at rutrum. Etiam eu porta sem, eu finibus orci. Integer quis elit porttitor, euismod augue vitae, ultricies nisi. Nulla ut consectetur metus, at euismod enim. Praesent nec lacus aliquet, venenatis turpis in, semper nibh. Etiam viverra dolor tellus, et vestibulum ipsum euismod lacinia. Quisque scelerisque varius scelerisque. Duis sagittis porta porttitor.
-    
-    Suspendisse maximus ante tellus, vel pulvinar orci ultrices nec. Vestibulum at hendrerit augue. Sed in venenatis tortor. Nulla eget magna id velit imperdiet molestie ac congue diam. Nunc ac lacinia ante, aliquet varius est. In rhoncus, felis id aliquet feugiat, nibh mauris vehicula orci, eget sagittis nisi ante vitae ligula. Ut hendrerit arcu non felis iaculis efficitur. Proin malesuada eget dolor in varius. Fusce ultrices dolor in quam condimentum rutrum. Nulla lacinia turpis sit amet justo commodo vestibulum. Maecenas faucibus euismod turpis fermentum bibendum. Nulla blandit accumsan magna, eu facilisis eros dictum vitae. Vivamus et tempus lacus, quis venenatis sem.
-                </p>
+                <FilterEngine items={this.getTestData()} />
             </TemplatePage>
         )
+    }
+
+    /*private test() {
+        let data: IData[] = [
+            {url: "f1", name:"", description:"", keywords:["mooi", "top"]},
+            {url: "f2", name:"", description:"", keywords:["mooi", "super"]},
+            {url: "f3", name:"", description:"", keywords:["lekker", "top"]},
+            {url: "f4", name:"", description:"", keywords:["mooi", "top"]},
+            {url: "f5", name:"", description:"", keywords:["lelijk", "mooi"]},
+            {url: "f6", name:"", description:"", keywords:["misschien", "ikweethetniet"]},
+            {url: "f7", name:"", description:"", keywords:["ikweethetniet", "top"]}
+        ]
+        let s = new ShowcaseData(data)
+        console.log(s.getDataByKeywords("top", "top"))
+    }*/
+
+    private getTestData() {
+        return new ShowcaseData([
+            {url: "f1", name:"", description:"", keywords:["mooi", "top"], id:0},
+            {url: "f2", name:"", description:"", keywords:["mooi", "super"], id:1},
+            {url: "f3", name:"", description:"", keywords:["lekker", "top"], id:2},
+            {url: "f4", name:"", description:"", keywords:["mooi", "top"], id: 3},
+            {url: "f5", name:"", description:"", keywords:["lelijk", "mooi"], id:4},
+            {url: "f6", name:"", description:"", keywords:["misschien", "ikweethetniet"], id:5},
+            {url: "f7", name:"", description:"", keywords:["ikweethetniet", "top"], id:6}
+        ] as IData[])
     }
 }
