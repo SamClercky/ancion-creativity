@@ -7,8 +7,7 @@ import "./ShowcaseOriginizer.css"
 import ShowcaseTile from "./ShowcaseTile";
 
 export interface IShowcaseOrginizerProps {
-    className?: string,
-    items: ShowcaseData
+    className?: string
 }
 
 export default class ShowcaseOrginizer extends React.Component<IShowcaseOrginizerProps, {}> {
@@ -24,7 +23,7 @@ export default class ShowcaseOrginizer extends React.Component<IShowcaseOrginize
     }
 
     private getShowcaseItems() {
-        return asSequence(this.props.items.getData())
+        return asSequence(ShowcaseData.getData())
             .map(item => {
                 this.fragmentId++
                 return (

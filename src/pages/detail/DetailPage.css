@@ -1,0 +1,33 @@
+.DetailPageWrapper {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    grid-template-rows: 5fr 1fr 1fr;
+    grid-template-areas: 
+        "image detail"
+        "image keywords"
+        "image social";
+    grid-gap: 10px;
+    width: 100%;
+    height: 80vh;
+    margin: 10px;
+}
+
+.DetailPageWrapper .DetailImageWrapper {
+    grid-area: image;
+    overflow: hidden;
+}
+.DetailImageWrapper img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+}
+.DetailPageWrapper .DetailDescription {
+    grid-area: detail;
+    overflow-y: scroll;
+}
+.DetailPageWrapper .DetailKeywords {
+    grid-area: keywords;
+}
+.DetailPageWrapper .DetailSocial {
+    grid-area: social;
+}

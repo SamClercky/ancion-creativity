@@ -4,6 +4,7 @@ import { IData } from "../common/ShowcaseData";
 import LazyLoad from "react-lazyload";
 
 import "./ShowcaseItem.css"
+import { Link } from "react-router-dom";
 
 export interface IShowcaseItemProps {
     className?: string,
@@ -82,14 +83,16 @@ export default class ShowcaseItem extends React.Component<IShowcaseItemProps, IS
                 onMouseLeave={this.onHoverOut}
                 onMouseMove={this.onMouseMove}
             >
-                <LazyLoad height="100%" once={true} overflow={true}>
-                    <img
-                        src={this.props.data.url}
-                        alt={this.props.data.name}
-                        className={styleClass}
-                        style={stylesTransform}
-                    />
-                </LazyLoad>
+                <Link to={`detail/${this.props.data.id}`}>
+                    <LazyLoad height="100%" once={true} overflow={true}>
+                        <img
+                            src={this.props.data.url}
+                            alt={this.props.data.name}
+                            className={styleClass}
+                            style={stylesTransform}
+                        />
+                    </LazyLoad>
+                </Link>
             </div>
         )
     }
@@ -97,7 +100,7 @@ export default class ShowcaseItem extends React.Component<IShowcaseItemProps, IS
     private getImgStyle(): React.CSSProperties {
         if (this.state.isHovered == true) {
             return {
-                transform: `translate(${this.state.currImagePos.x/10-10}px, ${this.state.currImagePos.y/10-10}px)`
+                transform: `translate(${this.state.currImagePos.x / 10 - 10}px, ${this.state.currImagePos.y / 10 - 10}px)`
             }
         } else {
             return {

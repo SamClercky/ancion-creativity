@@ -17,53 +17,61 @@ export interface IData {
  * Manages all the data about the art
  */
 export default class ShowcaseData {
-    private data: IData[];
+    private static data: IData[] = [];
 
+    /**
+     * Resets all the data
+     * @param data The new data to be stored
+     */
     public constructor(data?: IData[]) {
         if (data != null) {
-            this.data = data
+            ShowcaseData.data = data
         } else {
-            this.data = []
+            ShowcaseData.data = []
         }
     }
 
-    public add(foto: IData) {
-        this.data.push(foto)
+    public static add(foto: IData) {
+        ShowcaseData.data.push(foto)
     }
 
-    public getDataByKeyword(keyword: string) {
-        return asSequence(this.data)
+    public static getDataByKeyword(keyword: string) {
+        return asSequence(ShowcaseData.data)
             .filter(item => item.keywords.join(" ").indexOf(keyword.toLowerCase()) != -1)
             .toArray()
     }
 
-    public getDataByKeywords(...keywords: string[]): IData[] {
+    public static getDataByKeywords(...keywords: string[]): IData[] {
         return asSequence(keywords)
             .map(item => item.toLowerCase())
-            .map(item => this.getDataByKeyword(item))
-            .reduce((result, item) => this.diffData(result as IData[], item))
+            .map(item => ShowcaseData.getDataByKeyword(item))
+            .reduce((result, item) => ShowcaseData.diffData(result as IData[], item))
     }
 
-    public getData() {
-        return this.data
+    public static getData() {
+        return ShowcaseData.data
     }
 
-    public getById(id: number): IData {
-        return asSequence(this.data)
+    public static getById(id: number): IData {
+        return asSequence(ShowcaseData.data)
             .filter(item => item.id == id)
             .toArray()[0]
     }
 
-    public getByName(name: string): IData[] {
-        return asSequence(this.data)
+    public static getByName(name: string): IData[] {
+        return asSequence(ShowcaseData.data)
             .filter(item => item.name == name)
             .toArray()
     }
 
-    public getByUrl(url: string): IData[] {
-        return asSequence(this.data)
+    public static getByUrl(url: string): IData[] {
+        return asSequence(ShowcaseData.data)
             .filter(item => item.url == url)
             .toArray()
+    }
+
+    public static getLength(): number {
+        return ShowcaseData.data.length
     }
 
     /**
@@ -71,7 +79,7 @@ export default class ShowcaseData {
      * @param d1 list 1
      * @param d2 list 2
      */
-    public diffData(d1: IData[], d2: IData[]): IData[] {
+    public static diffData(d1: IData[], d2: IData[]): IData[] {
         let result: IData[] = []
 
         for (let x = 0; x < d1.length; x++) {
