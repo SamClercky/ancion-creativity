@@ -1,16 +1,16 @@
 import * as React from "react";
-import { Link } from "react-router-dom";
+import { Link, withRouter, RouteComponentProps } from "react-router-dom";
 //import ReactRouter from "react-router"
 
 import "./TemplatePage.css"
 
-export interface ITemplatePageProps {
+export interface ITemplatePageProps extends RouteComponentProps<{}> {
     title: string,
     sectionId: string,
     className?: string
 }
 
-export default class TemplatePage extends React.Component<ITemplatePageProps, {}> {
+class TemplatePage extends React.Component<ITemplatePageProps, {}> {
 
     public constructor(props: ITemplatePageProps) {
         super(props)
@@ -19,9 +19,14 @@ export default class TemplatePage extends React.Component<ITemplatePageProps, {}
         this.onGoBack = this.onGoBack.bind(this)
     }
 
-    private onGoBack() {
-        if (history.length > 1) {
-            history.back();
+    private onGoBack(evt: React.MouseEvent) {
+        evt.preventDefault()
+        if (this.props.history.length > 1) {
+            if (this.props.title == "404") {
+                this.props.history.push("/")
+            } else {
+                this.props.history.goBack();
+            }
         }
     }
 
@@ -48,3 +53,5 @@ export default class TemplatePage extends React.Component<ITemplatePageProps, {}
         )
     }
 }
+
+export default withRouter(TemplatePage)

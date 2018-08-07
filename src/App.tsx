@@ -8,6 +8,7 @@ import Showcase from "./pages/showcase/Showcase"
 import Aboutme from "./pages/aboutme/Aboutme"
 import DetailPage from "./pages/detail/DetailPage";
 import ShowcaseData, { IData } from "./pages/common/ShowcaseData";
+import LostAndFound from "./pages/404/404";
 
 export default class App extends React.Component {
     public render() {
@@ -32,6 +33,7 @@ export default class App extends React.Component {
                             component={Aboutme}
                         />
                         <Route exact={true} path="/detail/:id" component={DetailPage} />
+                        <Route component={LostAndFound} />
                     </Switch>
                 </div>
             </BrowserRouter>

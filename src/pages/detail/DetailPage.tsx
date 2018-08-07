@@ -30,7 +30,9 @@ export default class DetailPage extends React.Component<IDetailPageProps, IDetai
             parsed >= 0
         ) {
             id = parsed
-        } 
+        } else {
+            this.props.history.push("/404")
+        }
 
         this.state = {
             data: ShowcaseData.getById(id)
