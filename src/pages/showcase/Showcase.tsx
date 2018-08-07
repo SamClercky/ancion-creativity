@@ -1,7 +1,7 @@
 import * as React from "react"
 
 import TemplatePage from "../common/TemplatePage"
-import ShowcaseData, { IData } from "./ShowcaseData";
+import ShowcaseData, { IData } from "../common/ShowcaseData";
 import ShowcaseOrginizer from "./ShowcaseOrginizer";
 
 export default class Showcase extends React.Component {

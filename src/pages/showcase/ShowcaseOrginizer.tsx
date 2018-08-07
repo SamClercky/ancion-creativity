@@ -1,5 +1,5 @@
 import * as React from "react"
-import ShowcaseData from "./ShowcaseData";
+import ShowcaseData from "../common/ShowcaseData";
 import { asSequence } from "sequency";
 import ShowcaseItem from "./ShowcaseItem";
 

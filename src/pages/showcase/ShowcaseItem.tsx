@@ -1,6 +1,6 @@
 import * as React from "react"
 import * as ReactDOM from "react-dom"
-import { IData } from "./ShowcaseData";
+import { IData } from "../common/ShowcaseData";
 import LazyLoad from "react-lazyload";
 
 import "./ShowcaseItem.css"
