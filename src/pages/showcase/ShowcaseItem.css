@@ -1,0 +1,15 @@
+.ShowcaseItemWrapper {
+    overflow: hidden;
+}
+.ShowcaseItemWrapper img {
+    height: 100%;
+    width: 100%;
+    object-fit: cover;
+    transform-origin: center center;
+    transform: translate(0px, 0px);
+}
+.ShowcaseItemWrapper img.Hovered {
+    height: 120%;
+    width: 120%;
+    object-fit: cover;
+}

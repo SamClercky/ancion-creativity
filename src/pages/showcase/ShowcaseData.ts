@@ -27,6 +27,10 @@ export default class ShowcaseData {
         }
     }
 
+    public add(foto: IData) {
+        this.data.push(foto)
+    }
+
     public getDataByKeyword(keyword: string) {
         return asSequence(this.data)
             .filter(item => item.keywords.join(" ").indexOf(keyword.toLowerCase()) != -1)
@@ -42,6 +46,24 @@ export default class ShowcaseData {
 
     public getData() {
         return this.data
+    }
+
+    public getById(id: number): IData {
+        return asSequence(this.data)
+            .filter(item => item.id == id)
+            .toArray()[0]
+    }
+
+    public getByName(name: string): IData[] {
+        return asSequence(this.data)
+            .filter(item => item.name == name)
+            .toArray()
+    }
+
+    public getByUrl(url: string): IData[] {
+        return asSequence(this.data)
+            .filter(item => item.url == url)
+            .toArray()
     }
 
     /**

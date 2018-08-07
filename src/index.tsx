@@ -15,6 +15,8 @@ import { faAngleLeft } from '@fortawesome/free-solid-svg-icons'
 library.add(faAngleLeft)
 import { faAngleRight } from '@fortawesome/free-solid-svg-icons'
 library.add(faAngleRight)
+import { faSearch } from '@fortawesome/free-solid-svg-icons'
+library.add(faSearch)
 
 // start rendering
 ReactDOM.render(

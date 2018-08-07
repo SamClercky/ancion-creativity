@@ -53,11 +53,12 @@ header a.backArrow::after {
 header a.logo {
     margin-right: 0;
     margin-left: auto;
-    width: max-content;
     height: 100%;
 }
 header a.logo img {
     height: 100%;
+    float: right;
+    margin-left: auto;
 }
 
 div.content {
