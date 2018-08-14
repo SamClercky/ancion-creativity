@@ -5,6 +5,7 @@ import LazyLoad from "react-lazyload";
 
 import "./ShowcaseItem.css"
 import { Link } from "react-router-dom";
+import ShowcaseTile from "./ShowcaseTile";
 
 export interface IShowcaseItemProps {
     className?: string,
@@ -77,7 +78,7 @@ export default class ShowcaseItem extends React.Component<IShowcaseItemProps, IS
         let stylesTransform = this.getImgStyle()
 
         return (
-            <div
+            <ShowcaseTile
                 className={"ShowcaseItemWrapper " + (this.props.className || "")}
                 onMouseEnter={this.onHover}
                 onMouseLeave={this.onHoverOut}
@@ -93,7 +94,7 @@ export default class ShowcaseItem extends React.Component<IShowcaseItemProps, IS
                         />
                     </LazyLoad>
                 </Link>
-            </div>
+            </ShowcaseTile>
         )
     }
 

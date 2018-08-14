@@ -6,4 +6,13 @@ html, body, .rootWrapper {
   width: 100vw;
   height: 100vh;
   overflow: hidden;
+
+  font-size: 1.2rem;
+  color: #333;
+  background: white;
+}
+
+a {
+  text-decoration: none;
+  color: #333;
 }

@@ -17,11 +17,12 @@ export default class HomePage extends React.Component<IHomePageProps, {}> {
                 <div className="HomePageCenterSection">
                     <Logo />
                 </div>
-                <div className="HomePageBottomSection">
+                <div className="HomeAboutmeLink">
                     <Link to="/aboutme">
                         <Arrow direction={ArrowDirection.left} className="HomePageArrowDown" label="About me" />
                     </Link>
-                    
+                </div>
+                <div className="HomeShowcaseLink">
                     <Link to="/showcase">
                         <Arrow direction={ArrowDirection.right} className="HomePageArrowDown" label="Showcase" />
                     </Link>

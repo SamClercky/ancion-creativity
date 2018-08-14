@@ -1,33 +1,48 @@
 .DetailPageWrapper {
     display: grid;
     grid-template-columns: 1fr 1fr;
-    grid-template-rows: 5fr 1fr 1fr;
-    grid-template-areas: 
-        "image detail"
-        "image keywords"
-        "image social";
+    grid-template-rows: 1fr 0.5fr 40vh 1fr;
+    grid-template-areas: "image heading" "image keywords" "image detail" "image social";
     grid-gap: 10px;
-    width: 100%;
     height: 80vh;
     margin: 10px;
+}
+
+@media all and (max-width: 800px) {
+    .DetailPageWrapper {
+        grid-template-rows: 1fr 0.5fr 40vh auto 1fr;
+        grid-template-columns: 100%;
+        grid-template-areas: "heading" "keywords" "image" "detail" "social";
+    }
+    .DetailPageWrapper .DetailDescription {
+        overflow-y: initial !important;
+    }
 }
 
 .DetailPageWrapper .DetailImageWrapper {
     grid-area: image;
     overflow: hidden;
 }
+
+.DetailPageWrapper .DetailHeader {
+    grid-area: heading;
+}
+
 .DetailImageWrapper img {
     width: 100%;
     height: 100%;
-    object-fit: cover;
+    object-fit: contain;
 }
+
 .DetailPageWrapper .DetailDescription {
     grid-area: detail;
     overflow-y: scroll;
 }
+
 .DetailPageWrapper .DetailKeywords {
     grid-area: keywords;
 }
+
 .DetailPageWrapper .DetailSocial {
     grid-area: social;
 }

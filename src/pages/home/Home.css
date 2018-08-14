@@ -1,19 +1,24 @@
 #Home {
-    display: flex;
-    flex-direction: column;
+    display: grid;
+    grid-template-rows: 1fr;
+    grid-template-columns: minmax(200px, 1fr) 4fr minmax(200px, 1fr);
+    grid-template-areas: "aboutme logo showcase";
     width: 100%;
     height: 100%;
+    padding-left: 5%;
+    padding-right: 5%;
+    overflow: hidden;
 }
 
 .HomePageCenterSection {
+    grid-area: logo;
     display: flex;
-    width: 100%;
-    margin: auto;
-    margin-bottom: 0px;
 }
 
 .HomePageCenterSection svg {
     margin: auto;
+    width: 100%;
+    max-height: 80vh;
 }
 
 .HomePageBottomSection {
@@ -23,15 +28,68 @@
     height: 10%;
     min-height: 100px;
     margin: auto auto 0px auto;
-    /*justify-content: space-around;*/
 }
-.HomePageBottomSection a {
-    margin: auto;
+
+#Home div {
+    display: flex;
+    align-items: center;
+}
+
+#Home div a {
     text-decoration: none;
 }
-.HomePageBottomSection a:first-child {
-    margin-left: 10%;
+
+#Home .HomeAboutmeLink {
+    grid-area: aboutme;
 }
-.HomePageBottomSection a:last-child {
-    margin-right: 10%;
+
+#Home .HomeShowcaseLink {
+    grid-area: showcase;
+}
+
+/* make it responsive */
+
+@media all and (max-width: 1000px) {
+    #Home {
+        grid-template-rows: 5fr minmax(2rem, 1fr);
+        grid-template-columns: minmax(200px, 1fr) 1fr minmax(200px, 1fr);
+        grid-template-areas: "logo logo logo" "aboutme . showcase";
+    }
+}
+
+@media all and (max-width: 800px) {
+    #Home {
+        grid-template-rows: 5fr minmax(2rem, 1fr);
+        grid-template-columns: minmax(200px, 1fr) minmax(200px, 1fr);
+        grid-gap: 5%;
+        grid-template-areas: "logo logo" "aboutme showcase";
+    }
+}
+
+@media all and (max-width: 500px) {
+    #Home {
+        grid-template-rows: 7fr minmax(2rem, 1fr) minmax(2rem, 1fr);
+        grid-template-columns: 1fr;
+        grid-gap: 0px;
+        grid-template-areas: "logo" "showcase" "aboutme";
+        height: 80vh;
+    }
+    #Home .HomeAboutmeLink {
+        justify-self: center;
+    }
+    #Home .HomeShowcaseLink {
+        justify-self: center;
+    }
+    .HomePageCenterSection svg {
+        max-height: 50vh;
+    }
+}
+
+@media all and (min-width: 500px) {
+    #Home .HomeAboutmeLink {
+        justify-self: flex-end;
+    }
+    #Home .HomeShowcaseLink {
+        justify-self: flex-start;
+    }
 }

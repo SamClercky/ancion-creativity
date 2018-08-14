@@ -36,11 +36,16 @@ class TemplatePage extends React.Component<ITemplatePageProps, {}> {
             <section className={this.props.className || ""} id={this.props.sectionId}>
                 <div className="TemplateWrapper">
                     <header>
-                        <a href="#" className="backArrow" onClick={this.onGoBack} rel="prev" />
-                        <h1>{this.props.title}</h1>
-                        <Link to="/" className="logo" rel="next">
-                            <img src="http://via.placeholder.com/350x150" alt="Ancion creativity logo" />
-                        </Link>
+                        <a href="#" className="backArrow" onClick={this.onGoBack} rel="prev">
+                            <span className="backArrow" />
+                            <h1>{this.props.title}</h1>
+                        </a>
+                        <div className="TemplateLogo">
+                            <Link to="/" rel="next">
+                                <img src="http://via.placeholder.com/350x150" alt="Ancion creativity logo" />
+                            </Link>
+                        </div>
+
                     </header>
                     <div className="content">
                         {this.props.children}

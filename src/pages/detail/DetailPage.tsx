@@ -23,15 +23,15 @@ export default class DetailPage extends React.Component<IDetailPageProps, IDetai
 
         let id = 0
         let parsed = parseInt(this.props.match.params.id)
-        
+
         if (
-            parsed != NaN && 
+            parsed != NaN &&
             parsed < ShowcaseData.getLength() &&
             parsed >= 0
         ) {
             id = parsed
         } else {
-            this.props.history.push("/404")
+            this.props.history.push("/404") // redirect if there is no file found
         }
 
         this.state = {
@@ -48,16 +48,28 @@ export default class DetailPage extends React.Component<IDetailPageProps, IDetai
                     <div className="DetailImageWrapper">
                         <img src={this.state.data.url} alt={this.state.data.name} />
                     </div>
-                    <div className="DetailDescription">
+                    <div className="DetailHeader">
                         <h2>{this.state.data.name}</h2>
+                    </div>
+                    <div className="DetailDescription">
                         <p>{this.state.data.description}</p>
+                        <p>
+                            Hallo dit kan wel eens heel veel tekst bezorgen. Hallo dit kan wel eens heel veel tekst bezorgen. 
+                            Hallo dit kan wel eens heel veel tekst bezorgen. Hallo dit kan wel eens heel veel tekst bezorgen. 
+                            Hallo dit kan wel eens heel veel tekst bezorgen. 
+                            Hallo dit kan wel eens heel veel tekst bezorgen. 
+                            Hallo dit kan wel eens heel veel tekst bezorgen. Hallo dit kan wel eens heel veel tekst bezorgen. 
+                            Hallo dit kan wel eens heel veel tekst bezorgen. 
+                            Hallo dit kan wel eens heel veel tekst bezorgen. 
+                            Hallo dit kan wel eens heel veel tekst bezorgen. 
+                        </p>
                     </div>
                     <div className="DetailKeywords">
                         Tags: {this.state.data.keywords.join(", ")}
                     </div>
                     <div className="DetailSocial">
                         Social media function coming sone...
-                </div>
+                    </div>
                 </div>
             </TemplatePage>
         )

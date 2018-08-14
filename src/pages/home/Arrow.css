@@ -1,10 +1,10 @@
 .ArrowWrapper {
     display: flex;
     position: relative;
-    text-decoration: none;
     color: #4c4c4c;
     align-items: center;
     justify-content: center;
+    padding-right: 0.7em;
 }
 .ArrowMirror {
     transform: scaleX(-1);
@@ -16,17 +16,17 @@
 
 .Arrow.-left {
     position: relative;
-    width: 0px;
-    height: 3px;
+    width: 0em;
+    height: 0.125em;
 }
 .Arrow::before {
     left: 90%;
     background: #4c4c4c;
     position: absolute;
     content: "";
-    width: 10%;
+    width: 20%;
     height: 100%;
-    transform-origin: right center;
+    transform-origin: right bottom;
     transform: rotate(40deg);
 }
 .Arrow::after {
@@ -34,17 +34,17 @@
     background: #4c4c4c;
     position: absolute;
     content: "";
-    width: 10%;
+    width: 20%;
     height: 100%;
-    transform-origin: right center;
+    transform-origin: right top;
     transform: rotate(-40deg);
 }
 
 .Arrow.-right {
     position: relative;
     background: rgba(0, 0, 0, 0);
-    width: 10px;
-    height: 3px;
+    width: 0.4em;
+    height: 0.125em;
 }
 .Arrow.-right::before {
     width: 100%;
@@ -59,23 +59,23 @@
 
 /* transition */
 .ArrowWrapper:hover .-left {
-    width: 100px;
-    transform: translateX(80%);
+    width: 2em;
+    transform: translateX(50%);
     transition-delay: 0.25s;
     transition: all 0.5s;
 }
 .ArrowWrapper:hover .-right {
-    width: 0px;
+    width: 0em;
     transition-delay: 0s;
     transition: width 0.1s;
 }
 .ArrowWrapper:hover p {
-    transform: translateX(100%);
+    transform: translateX(1.5em);
     transition-delay: 0.25s;
     transition: transform 0.5s;
 }
 .ArrowWrapper:hover .ArrowMirror {
-    transform: translateX(110%) scaleX(-1);
+    transform: translateX(1.5em) scaleX(-1);
     transition-delay: 0.25s;
     transition: transform 0.5s;
 }
