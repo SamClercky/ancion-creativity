@@ -10,7 +10,7 @@
 
 @media all and (max-width: 800px) {
     .DetailPageWrapper {
-        grid-template-rows: 1fr 0.5fr 40vh auto 1fr;
+        grid-template-rows: 1fr 0.5fr auto auto 1fr;
         grid-template-columns: 100%;
         grid-template-areas: "heading" "keywords" "image" "detail" "social";
     }
@@ -37,6 +37,7 @@
 .DetailPageWrapper .DetailDescription {
     grid-area: detail;
     overflow-y: scroll;
+    text-align: justify;
 }
 
 .DetailPageWrapper .DetailKeywords {
