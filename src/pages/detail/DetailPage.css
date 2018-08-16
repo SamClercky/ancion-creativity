@@ -4,7 +4,7 @@
     grid-template-rows: 1fr 0.5fr 40vh 1fr;
     grid-template-areas: "image heading" "image keywords" "image detail" "image social";
     grid-gap: 10px;
-    height: 80vh;
+    min-height: 80vh;
     margin: 10px;
 }
 
@@ -16,7 +16,7 @@
     }
     .DetailPageWrapper .DetailDescription {
         overflow-y: initial !important;
-    }
+    }    
 }
 
 .DetailPageWrapper .DetailImageWrapper {

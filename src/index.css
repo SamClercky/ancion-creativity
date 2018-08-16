@@ -12,6 +12,10 @@ html, body, .rootWrapper {
   background: white;
 }
 
+h1, a, p {
+  font-family: "MathJax_Main";
+}
+
 a {
   text-decoration: none;
   color: #333;

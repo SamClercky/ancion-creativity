@@ -1,5 +1,5 @@
 //import {map, reduce, filter} from "lodash"
-import {asSequence} from "sequency"
+import { asSequence } from "sequency"
 
 export interface IData {
     url: string,
@@ -72,6 +72,19 @@ export default class ShowcaseData {
 
     public static getLength(): number {
         return ShowcaseData.data.length
+    }
+
+    /**
+     * Only use this for quick initial dummy data
+     */
+    public static getEmptyDummyData(): IData {
+        return {
+            url: `nourl/${Math.floor(Math.random()*100)}`,
+            name: "no name",
+            description: "no description",
+            keywords: ["no tags"],
+            id: -1
+        }
     }
 
     /**

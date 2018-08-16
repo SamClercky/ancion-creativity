@@ -6,7 +6,7 @@ import TemplatePage from "../common/TemplatePage";
 import "./DetailPage.css"
 
 interface IDetailPageRouterProps {
-    id: string
+    name: string
 }
 
 export interface IDetailPageProps extends RouteComponentProps<IDetailPageRouterProps> {
@@ -21,21 +21,20 @@ export default class DetailPage extends React.Component<IDetailPageProps, IDetai
     public constructor(props: IDetailPageProps) {
         super(props)
 
-        let id = 0
-        let parsed = parseInt(this.props.match.params.id)
+        let name = this.props.match.params.name
+        let potentialShowcaseData = ShowcaseData.getByName(name)
+        let imageData: IData = ShowcaseData.getEmptyDummyData()
 
         if (
-            parsed != NaN &&
-            parsed < ShowcaseData.getLength() &&
-            parsed >= 0
+            potentialShowcaseData.length > 0
         ) {
-            id = parsed
+            imageData = potentialShowcaseData[0]
         } else {
             this.props.history.push("/404") // redirect if there is no file found
         }
 
         this.state = {
-            data: ShowcaseData.getById(id)
+            data: imageData
         }
 
         // bind all eventListeners

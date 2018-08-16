@@ -15,7 +15,9 @@ export interface IShowcaseItemProps {
 interface IShowcaseItemState {
     currImagePos: Point,
     isHovered: boolean,
-    middelPoint: Point
+    middelPoint: Point,
+    width: number,
+    height: number
 }
 
 interface Point {
@@ -31,7 +33,9 @@ export default class ShowcaseItem extends React.Component<IShowcaseItemProps, IS
         this.state = {
             currImagePos: { x: 0, y: 0 },
             middelPoint: { x: 0, y: 0 },
-            isHovered: false
+            isHovered: false,
+            width: 0,
+            height: 0
         }
 
         // bind all eventListeners
@@ -41,9 +45,13 @@ export default class ShowcaseItem extends React.Component<IShowcaseItemProps, IS
     }
 
     public componentDidMount() {
-        let middle = this.getMiddel(ReactDOM.findDOMNode(this) as HTMLElement)
+        let bounderies = this.getDOMNodeBounderies()
+
+        let middle = this.getMiddel({x: bounderies.left, y: bounderies.top} as Point, bounderies.width, bounderies.height)
         this.setState({
-            middelPoint: middle
+            middelPoint: middle,
+            width: bounderies.width,
+            height: bounderies.height
         })
     }
 
@@ -61,9 +69,13 @@ export default class ShowcaseItem extends React.Component<IShowcaseItemProps, IS
     }
 
     private onHover(evt: React.MouseEvent) {
+        let bounderies = this.getDOMNodeBounderies()
+        let middle = this.getMiddel({x: bounderies.left, y: bounderies.top} as Point, bounderies.width, bounderies.height)
         this.setState({
-            middelPoint: this.getMiddel(evt.target as HTMLElement),
-            isHovered: true
+            middelPoint: middle,
+            isHovered: true,
+            width: bounderies.width,
+            height: bounderies.height
         })
     }
 
@@ -84,7 +96,7 @@ export default class ShowcaseItem extends React.Component<IShowcaseItemProps, IS
                 onMouseLeave={this.onHoverOut}
                 onMouseMove={this.onMouseMove}
             >
-                <Link to={`detail/${this.props.data.id}`}>
+                <Link to={`showcase/${this.props.data.name}`}>
                     <LazyLoad height="100%" once={true} overflow={true}>
                         <img
                             src={this.props.data.url}
@@ -101,7 +113,9 @@ export default class ShowcaseItem extends React.Component<IShowcaseItemProps, IS
     private getImgStyle(): React.CSSProperties {
         if (this.state.isHovered == true) {
             return {
-                transform: `translate(${this.state.currImagePos.x / 10 - 10}px, ${this.state.currImagePos.y / 10 - 10}px)`
+                transform: `translate(${
+                    this.mapToPerc(this.state.currImagePos.x,this.state.width)/50 - 15}%, ${
+                    this.mapToPerc(this.state.currImagePos.y, this.state.height)/50 - 20}%)`
             }
         } else {
             return {
@@ -110,11 +124,10 @@ export default class ShowcaseItem extends React.Component<IShowcaseItemProps, IS
         }
     }
 
-    private getMiddel(elem: HTMLElement): Point {
-        let bounderies = elem.getBoundingClientRect()
+    private getMiddel(startPoint: Point, width: number, height: number): Point {
         return {
-            x: bounderies.left + (bounderies.width / 2),
-            y: bounderies.top + (bounderies.height / 2)
+            x: startPoint.x + (width / 2),
+            y: startPoint.y + (height / 2)
         }
     }
 
@@ -124,4 +137,9 @@ export default class ShowcaseItem extends React.Component<IShowcaseItemProps, IS
             y: p2.y - p1.y
         }
     }
+    private mapToPerc(pixel: number, max: number): number {
+        return (pixel / max) * 100
+    }
+
+    private getDOMNodeBounderies() { return (ReactDOM.findDOMNode(this) as HTMLElement).getBoundingClientRect()}
 }
