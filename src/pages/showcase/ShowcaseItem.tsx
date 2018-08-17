@@ -96,7 +96,7 @@ export default class ShowcaseItem extends React.Component<IShowcaseItemProps, IS
                 onMouseLeave={this.onHoverOut}
                 onMouseMove={this.onMouseMove}
             >
-                <Link to={`showcase/${this.props.data.name}`}>
+                <Link to={`showcase/${this.props.data.name.replace(" ", "-")}`}>
                     <LazyLoad height="100%" once={true} overflow={true}>
                         <img
                             src={this.props.data.url}

@@ -5,8 +5,12 @@ import TemplatePage from "../common/TemplatePage"
 export default class Aboutme extends React.Component {
     public render() {
         return (
-            <TemplatePage title="About me" sectionId="aboutme">
-                <h2>About me</h2>
+            <TemplatePage
+                title="Over mij"
+                sectionId="aboutme"
+                description="De pagina waar ik over mezelf vertel in geuren en kleuren"
+            >
+                <h2>Over mij</h2>
             </TemplatePage>
         )
     }

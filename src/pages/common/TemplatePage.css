@@ -38,20 +38,23 @@ header {
     background: white;
 }
 
-header > a {
-    display: flex;
-    justify-content: space-evenly;
-    align-items: center;
+header .TemplateHeaderWrapper {
+    display: grid;
+    grid-template-columns: auto auto;
+    grid-template-rows: auto 0.75rem;
+    grid-template-areas: "arrow heading" "arrow backlinks";
 }
 
-header span.backArrow {
+header a.backArrow {
     position: relative;
     padding-right: 1em;
     background: rgba(0, 0, 0, 0);
+    grid-area: arrow;
 }
 
 header span.backArrow::before {
     content: "";
+    top: 50%;
     position: absolute;
     width: 1em;
     height: 0.125em;
@@ -62,12 +65,26 @@ header span.backArrow::before {
 
 header span.backArrow::after {
     content: "";
+    top: 50%;
     position: absolute;
     width: 1em;
     height: 0.125em;
     background: #4c4c4c;
     transform-origin: left center;
     transform: rotate(-60deg);
+}
+
+header a.TemplateTitle, header a.TemplateTitle h1 {
+    grid-area: heading;
+    margin-bottom: 0px;
+    margin-top: 0px;
+    text-transform: capitalize;
+}
+
+header ul {
+    grid-area: backlinks;
+    font-size: 0.70rem;
+    margin: 0;
 }
 
 header div.TemplateLogo {

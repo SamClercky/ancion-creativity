@@ -28,6 +28,7 @@
     stroke-miterlimit: 4;
     stroke-width: 3.0999999;
     opacity: 0;
+    /*animation: particleMovement 2.5s ease-out 1s 1;*/
     animation: particleMovement 2.5s ease-out 1s 1;
     animation-fill-mode: forwards;
 }

@@ -42,7 +42,11 @@ export default class DetailPage extends React.Component<IDetailPageProps, IDetai
 
     public render() {
         return (
-            <TemplatePage title={this.state.data.name} sectionId={`detail${this.state.data.id}`}>
+            <TemplatePage
+                title={this.state.data.name}
+                sectionId={`detail${this.state.data.id}`}
+                description={this.state.data.description}
+            >
                 <div className={"DetailPageWrapper " + (this.props.className || "")}>
                     <div className="DetailImageWrapper">
                         <img src={this.state.data.url} alt={this.state.data.name} />

@@ -99,7 +99,7 @@ export default class Logo extends React.Component<ILogoProps, {}> {
 
     private getSvgDelay(): React.CSSProperties {
         return {
-            animationDelay: (Math.random() * 2) + "s"
+            animationDelay: (Math.random() * 1.5) + "s"
         }
     }
 }

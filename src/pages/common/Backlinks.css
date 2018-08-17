@@ -1,0 +1,38 @@
+ul.BackLinksWrapper {
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+}
+ul.BackLinksWrapper li {
+    list-style: none;
+    position: relative;
+    margin-right: 1em;
+    text-transform: capitalize;
+}
+ul.BackLinksWrapper li::before,
+ul.BackLinksWrapper li::after {
+    left: 110%;
+    top: 50%;
+    background: #4c4c4c;
+    position: absolute;
+    content: "";
+    width: 0.5em;
+    height: 0.125em;
+}
+ul.BackLinksWrapper li::before {
+    transform-origin: right bottom;
+    transform: rotate(40deg);
+}
+ul.BackLinksWrapper li::after {
+    transform-origin: right top;
+    transform: rotate(-40deg);
+}
+ul.BackLinksWrapper li:last-child::before {
+    display: none;
+}
+ul.BackLinksWrapper li:last-child::after {
+    display: none;
+}
+ul.BackLinksWrapper li a:hover {
+    color: rgb(204, 0, 102);
+}

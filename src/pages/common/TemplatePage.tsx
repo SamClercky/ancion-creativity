@@ -1,13 +1,17 @@
 import * as React from "react";
 import { Link, withRouter, RouteComponentProps } from "react-router-dom";
-//import ReactRouter from "react-router"
+import { Helmet } from "react-helmet"
 
 import "./TemplatePage.css"
+import BackLinks from "./Backlinks";
 
 export interface ITemplatePageProps extends RouteComponentProps<{}> {
     title: string,
     sectionId: string,
-    className?: string
+    className?: string,
+    description?: string,
+    canonical?: string
+    // other SEO
 }
 
 class TemplatePage extends React.Component<ITemplatePageProps, {}> {
@@ -34,12 +38,23 @@ class TemplatePage extends React.Component<ITemplatePageProps, {}> {
         //let history = ReactRouter.hystory;
         return (
             <section className={this.props.className || ""} id={this.props.sectionId}>
+                <Helmet>
+                    <title>{this.props.title}</title>
+                    <meta name="eg:description" content={this.props.description} />
+                    <link rel="canonical" href={(this.props.canonical != undefined) ? this.props.canonical : window.location.href} />
+                </Helmet>
+
                 <div className="TemplateWrapper">
                     <header>
-                        <a href="#" className="backArrow" onClick={this.onGoBack} rel="prev">
-                            <span className="backArrow" />
-                            <h1>{this.props.title}</h1>
-                        </a>
+                        <span className="TemplateHeaderWrapper">
+                            <a className="backArrow" href="#" rel="prev" onClick={this.onGoBack}>
+                                <span className="backArrow" />
+                            </a>
+                            <a className="TemplateTitle" href="#" rel="prev" onClick={this.onGoBack}>
+                                <h1>{this.props.title}</h1>
+                            </a>
+                            <BackLinks shortUrl={this.props.location.pathname} />
+                        </span>
                         <div className="TemplateLogo">
                             <Link to="/" rel="next">
                                 <img src="http://via.placeholder.com/350x150" alt="Ancion creativity logo" />

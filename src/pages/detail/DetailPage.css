@@ -4,12 +4,14 @@
     grid-template-rows: 1fr 0.5fr 40vh 1fr;
     grid-template-areas: "image heading" "image keywords" "image detail" "image social";
     grid-gap: 10px;
-    min-height: 80vh;
+    height: 80vh;
     margin: 10px;
 }
 
 @media all and (max-width: 800px) {
     .DetailPageWrapper {
+        height: initial;
+        min-height: 80vh;
         grid-template-rows: 1fr 0.5fr auto auto 1fr;
         grid-template-columns: 100%;
         grid-template-areas: "heading" "keywords" "image" "detail" "social";
@@ -26,6 +28,7 @@
 
 .DetailPageWrapper .DetailHeader {
     grid-area: heading;
+    text-transform: capitalize;
 }
 
 .DetailImageWrapper img {
