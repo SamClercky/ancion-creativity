@@ -44,7 +44,7 @@ export default class DetailPage extends React.Component<IDetailPageProps, IDetai
         return (
             <TemplatePage
                 title={this.state.data.name}
-                sectionId={`detail${this.state.data.id}`}
+                sectionId={`detail${this.state.data.name}`}
                 description={this.state.data.description}
             >
                 <div className={"DetailPageWrapper " + (this.props.className || "")}>

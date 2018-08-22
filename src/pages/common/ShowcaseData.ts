@@ -5,12 +5,12 @@ export interface IData {
     url: string,
     name: string,
     description: string,
-    keywords: string[],
-    id: number,
+    keywords: string[]
     facebookUrl?: string,
     twitterUrl?: string,
     pintrestUrl?: string,
-    googleplusUrl?: string
+    googleplusUrl?: string,
+    standartComment?: string
 }
 
 /**
@@ -52,12 +52,6 @@ export default class ShowcaseData {
         return ShowcaseData.data
     }
 
-    public static getById(id: number): IData {
-        return asSequence(ShowcaseData.data)
-            .filter(item => item.id == id)
-            .toArray()[0]
-    }
-
     public static getByName(name: string): IData[] {
         return asSequence(ShowcaseData.data)
             .filter(item => item.name == name)
@@ -82,8 +76,7 @@ export default class ShowcaseData {
             url: `nourl/${Math.floor(Math.random()*100)}`,
             name: "no name",
             description: "no description",
-            keywords: ["no tags"],
-            id: -1
+            keywords: ["no tags"]
         }
     }
 

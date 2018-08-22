@@ -6,9 +6,12 @@
 
 # testing
 /coverage
+firebase-debug.log
+backup
 
 # production
 /build
+/functions/lib
 
 # misc
 .DS_Store
