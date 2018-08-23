@@ -49,4 +49,5 @@
 
 .DetailPageWrapper .DetailSocial {
     grid-area: social;
+    display: none; /* coming sone */
 }

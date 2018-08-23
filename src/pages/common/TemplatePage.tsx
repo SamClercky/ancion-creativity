@@ -51,10 +51,11 @@ class TemplatePage extends React.Component<ITemplatePageProps, {}> {
                                 <span className="backArrow" />
                             </a>
                             <a className="TemplateTitle" href="#" rel="prev" onClick={this.onGoBack}>
-                                <h1>{this.props.title}</h1>
+                                <span>Terug</span>
                             </a>
                             <BackLinks shortUrl={this.props.location.pathname} />
                         </span>
+                        <h1>{this.props.title}</h1>
                         <div className="TemplateLogo">
                             <Link to="/" rel="next">
                                 <img src="http://via.placeholder.com/350x150" alt="Ancion creativity logo" />
@@ -66,7 +67,7 @@ class TemplatePage extends React.Component<ITemplatePageProps, {}> {
                         {this.props.children}
                     </div>
                     <footer>
-                        Hier komt de footer
+                        <p>Met <span className="heart">&#x2661;</span> gemaakt door <a target="_black" href="https://github.com/SamClercky">@SamClercky</a></p>
                     </footer>
                 </div>
             </section>

@@ -36,3 +36,7 @@ ul.BackLinksWrapper li:last-child::after {
 ul.BackLinksWrapper li a:hover {
     color: rgb(204, 0, 102);
 }
+ul.BackLinksWrapper li:last-child a {
+    color: rgb(204, 0, 102);
+    cursor: default;
+}

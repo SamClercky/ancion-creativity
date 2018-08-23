@@ -20,6 +20,10 @@ section>.TemplateWrapper {
         grid-template-rows: minmax(auto, 4em) minmax(80vh, auto) auto;
         grid-template-areas: "header" "content" "footer";
     }
+    header .TemplateHeaderWrapper .TemplateTitle,
+    header .TemplateHeaderWrapper ul {
+        display: none;
+    }
 }
 
 @media all and (max-width: 400px) {
@@ -74,7 +78,7 @@ header span.backArrow::after {
     transform: rotate(-60deg);
 }
 
-header a.TemplateTitle, header a.TemplateTitle h1 {
+header a.TemplateTitle, header a.TemplateTitle span {
     grid-area: heading;
     margin-bottom: 0px;
     margin-top: 0px;
@@ -89,7 +93,7 @@ header ul {
 
 header div.TemplateLogo {
     margin-right: 0;
-    margin-left: auto;
+    /* margin-left: auto; */
     height: 100%;
     width: min-content;
     overflow: hidden;
@@ -99,7 +103,12 @@ header div.TemplateLogo {
 header div.TemplateLogo a img {
     height: 100%;
     float: right;
-    margin-left: auto;
+    /* margin-left: auto; */
+}
+
+header h1 {
+    margin: auto;
+    text-transform: capitalize;
 }
 
 div.content {
@@ -109,4 +118,22 @@ div.content {
 footer {
     display: flex;
     grid-area: footer;
+    box-shadow: rgba(76, 76, 76, 0.5) 0px 0px 6px;
+    background: white;
+    padding: 10px;
+    margin-top: 1rem;
+    display: flex;
+    justify-content: center;
+    align-content: center;
+}
+footer span.heart {
+    color: red;
+    padding-left: 0.25rem;
+    padding-right: 0.25rem;  
+}
+footer p {
+    text-align: center;
+}
+footer a:hover {
+    color: hsl(180, 100%, 30%);
 }
