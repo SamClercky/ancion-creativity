@@ -71,6 +71,7 @@ function registerValidSW(swUrl: string) {
                 // It's the perfect time to display a 'New content is
                 // available; please refresh.' message in your web app.
                 console.log('New content is available; please refresh.');
+                showRefreshMessage()
               } else {
                 // At this point, everything has been precached.
                 // It's the perfect time to display a
@@ -119,5 +120,17 @@ export function unregister() {
     navigator.serviceWorker.ready.then(registration => {
       registration.unregister();
     });
+  }
+}
+
+function showRefreshMessage() {
+  const msg = document.getElementById("newContentWrapper") as HTMLDivElement
+  msg.classList.add("visible")
+  const cross = document.getElementById("newContentCross") as HTMLDivElement
+  if (cross != undefined && cross != null) {
+    // @ts-ignore
+    cross.onclick = (ev) => {
+      msg.classList.remove("visible")
+    }
   }
 }
