@@ -6,6 +6,7 @@ export interface IShowcaseTileProps {
     onMouseEnter?: (evt: React.MouseEvent) => void,
     onMouseMove?: (evt: React.MouseEvent) => void,
     onMouseLeave?: (evt: React.MouseEvent) => void,
+    title?: string
 }
 
 export default class ShowcaseTile extends React.Component<IShowcaseTileProps, {}> {
@@ -56,6 +57,7 @@ export default class ShowcaseTile extends React.Component<IShowcaseTileProps, {}
                 onMouseEnter={this.onMouseEnter}
                 onMouseMove={this.onMouseMove}
                 onMouseLeave={this.onMouseLeave}
+                title={this.props.title}
             >
                 {this.props.children}
             </div>

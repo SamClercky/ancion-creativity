@@ -27,7 +27,7 @@ export default class BackLinks extends React.Component<IBackLinksProps, {}> {
             .map(item => {
                 return (
                     <li key={`BackLinks${item}`}>
-                        <Link to={"/" + strippedUrl.slice(0, list.indexOf(item)).join("/")}>{item}</Link>
+                        <Link rel="next" title={`Ga naar de ${item}-pagina`} to={"/" + strippedUrl.slice(0, list.indexOf(item)).join("/")}>{item}</Link>
                     </li>
                 )
             })

@@ -22,12 +22,12 @@ export default class HomePage extends React.Component<IHomePageProps, {}> {
                     <Logo />
                 </div>
                 <div className="HomeAboutmeLink">
-                    <Link to="/aboutme">
+                    <Link title="Ga naar de over mij-pagina" to="/aboutme">
                         <Arrow direction={ArrowDirection.left} className="HomePageArrowDown" label="Over mij" />
                     </Link>
                 </div>
                 <div className="HomeShowcaseLink">
-                    <Link to="/showcase">
+                    <Link title="Ga naar de showcase-pagina" to="/showcase">
                         <Arrow direction={ArrowDirection.right} className="HomePageArrowDown" label="Showcase" />
                     </Link>
                 </div>

@@ -47,17 +47,17 @@ class TemplatePage extends React.Component<ITemplatePageProps, {}> {
                 <div className="TemplateWrapper">
                     <header>
                         <span className="TemplateHeaderWrapper">
-                            <a className="backArrow" href="#" rel="prev" onClick={this.onGoBack}>
+                            <a title="Ga terug naar de vorige pagina" className="backArrow" href="#" rel="prev" onClick={this.onGoBack}>
                                 <span className="backArrow" />
                             </a>
-                            <a className="TemplateTitle" href="#" rel="prev" onClick={this.onGoBack}>
+                            <a title="Ga terug naar de vorige pagina" className="TemplateTitle" href="#" rel="prev" onClick={this.onGoBack}>
                                 <span>Terug</span>
                             </a>
                             <BackLinks shortUrl={this.props.location.pathname} />
                         </span>
                         <h1>{this.props.title}</h1>
                         <div className="TemplateLogo">
-                            <Link to="/" rel="next">
+                            <Link title="Ga naar de Home-pagina" to="/" rel="next">
                                 <img src="http://via.placeholder.com/350x150" alt="Ancion creativity logo" />
                             </Link>
                         </div>
