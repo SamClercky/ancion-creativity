@@ -56,16 +56,6 @@ export default class DetailPage extends React.Component<IDetailPageProps, IDetai
                     </div>
                     <div className="DetailDescription">
                         <p>{this.state.data.description}</p>
-                        <p>
-                            Hallo dit kan wel eens heel veel tekst bezorgen. Hallo dit kan wel eens heel veel tekst bezorgen. 
-                            Hallo dit kan wel eens heel veel tekst bezorgen. Hallo dit kan wel eens heel veel tekst bezorgen. 
-                            Hallo dit kan wel eens heel veel tekst bezorgen. 
-                            Hallo dit kan wel eens heel veel tekst bezorgen. 
-                            Hallo dit kan wel eens heel veel tekst bezorgen. Hallo dit kan wel eens heel veel tekst bezorgen. 
-                            Hallo dit kan wel eens heel veel tekst bezorgen. 
-                            Hallo dit kan wel eens heel veel tekst bezorgen. 
-                            Hallo dit kan wel eens heel veel tekst bezorgen. 
-                        </p>
                     </div>
                     <div className="DetailKeywords">
                         Tags: {this.state.data.keywords.join(", ")}

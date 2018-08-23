@@ -10,7 +10,5 @@
     transform: translate(0px, 0px);
 }
 .ShowcaseItemWrapper img.Hovered {
-    height: 120%;
-    width: 120%;
     object-fit: cover;
 }

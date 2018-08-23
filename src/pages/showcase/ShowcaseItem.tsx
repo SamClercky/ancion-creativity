@@ -115,8 +115,10 @@ export default class ShowcaseItem extends React.Component<IShowcaseItemProps, IS
         if (this.state.isHovered == true) {
             return {
                 transform: `translate(${
-                    this.mapToPerc(this.state.currImagePos.x,this.state.width)/50 - 15}%, ${
-                    this.mapToPerc(this.state.currImagePos.y, this.state.height)/50 - 20}%)`
+                    this.mapToPerc(this.state.currImagePos.x,this.state.width)/100}%, ${
+                    this.mapToPerc(this.state.currImagePos.y, this.state.height)/100}%) 
+                    scale(1.03)`,
+                transition: "none 0s ease 0s"
             }
         } else {
             return {
