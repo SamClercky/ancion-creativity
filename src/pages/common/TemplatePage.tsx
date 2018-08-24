@@ -5,6 +5,8 @@ import { Helmet } from "react-helmet"
 import "./TemplatePage.css"
 import BackLinks from "./Backlinks";
 
+import Logo from "../../logo.svg"
+
 export interface ITemplatePageProps extends RouteComponentProps<{}> {
     title: string,
     sectionId: string,
@@ -58,13 +60,13 @@ class TemplatePage extends React.Component<ITemplatePageProps, {}> {
                         <h1>{this.props.title}</h1>
                         <div className="TemplateLogo">
                             <Link title="Ga naar de Home-pagina" to="/" rel="next">
-                                <img src="http://via.placeholder.com/350x150" alt="Ancion creativity logo" />
+                                <img src={Logo} alt="Ancion creativity logo" />
                             </Link>
                         </div>
 
                     </header>
                     <div className="content">
-                        {this.props.children}
+                        <main>{this.props.children}</main>
                     </div>
                     <footer>
                         <p>Met <span className="heart">&#x2661;</span> gemaakt door <a target="_black" href="https://github.com/SamClercky">@SamClercky</a></p>

@@ -3,9 +3,9 @@
   "short_name": "Ancion",
   "theme_color": "hsl(180,100%,30%)",
   "background_color": "#ffffff",
-  "display": "standalone",
-  "scope": "/",
-  "start_url": "/",
+  "display": "browser",
+  "Scope": "/",
+  "start_url": "/index.html",
   "icons": [
     {
       "src": "images/icons/icon-72x72.png",
@@ -47,5 +47,6 @@
       "sizes": "512x512",
       "type": "image/png"
     }
-  ]
+  ],
+  "splash_pages": null
 }

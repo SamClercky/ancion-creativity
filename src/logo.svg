@@ -43,6 +43,9 @@
             font-family:"MathJax_Main";  // this has to changed; TODO: make it from google fonts
             text-align:start;
         }
+        svg {
+            background: white;
+        }
     </style>
                 <g transform="translate(0 -308.27)" id="layer1">
                     <path class="particle geel" id="rect3614" d="M12.36 545.68l52.77-33.01 51.04-.43 53.68-16.17.08 53.28-157.94 14.86z" />

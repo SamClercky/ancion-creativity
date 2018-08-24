@@ -14,7 +14,7 @@ export interface IHomePageProps {
 export default class HomePage extends React.Component<IHomePageProps, {}> {
     public render() {
         return (
-            <section id="Home" className={this.props.className}>
+            <main id="Home" className={this.props.className}>
                 <Helmet>
                     <link rel="canonical" href="/" />
                 </Helmet>
@@ -31,7 +31,7 @@ export default class HomePage extends React.Component<IHomePageProps, {}> {
                         <Arrow direction={ArrowDirection.right} className="HomePageArrowDown" label="Showcase" />
                     </Link>
                 </div>
-            </section>
+            </main>
         )
     }
 }

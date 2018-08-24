@@ -10,15 +10,15 @@
   },
   "hosting": {
     "public": "build",
-    "ignore": [
-      "firebase.json",
-      "**/.*",
-      "**/node_modules/**"
-    ],
+    "ignore": ["firebase.json", "**/.*", "**/node_modules/**"],
     "rewrites": [
       {
         "source": "/showcasedata",
         "function": "showcasedata"
+      },
+      {
+        "source": "**",
+        "destination": "/index.html"
       }
     ]
   }
