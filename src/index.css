@@ -1,3 +1,5 @@
+@import url('https://fonts.googleapis.com/css?family=Caveat|Caveat+Brush|Courgette|Dancing+Script|Henny+Penny|Kaushan+Script|Marck+Script|Pacifico|Permanent+Marker|Reenie+Beanie|Risque');
+
 html, body, .rootWrapper {
   display: flex;
   margin: 0;
@@ -12,8 +14,11 @@ html, body, .rootWrapper {
   background: white;
 }
 
-h1, a, p {
-  font-family: "MathJax_Main";
+h1, h2, a {
+  font-family: 'Permanent Marker', cursive;
+}
+p {
+  font-family: 'Courgette', cursive;
 }
 
 a {

@@ -21,9 +21,9 @@ export default class Logo extends React.Component<ILogoProps, {}> {
             fontVariant:"normal",
             fontWeight:400,
             fontStretch:"normal",
-            fontSize:"37.43444061px",
+            fontSize:"36.5px",
             lineHeight:"125%",
-            fontFamily:"MathJax_Main",  // this has to changed; TODO: make it from google fonts
+            fontFamily:"'Courgette', cursive",  // this has to changed; TODO: make it from google fonts
             textAlign:"start"
         }
 

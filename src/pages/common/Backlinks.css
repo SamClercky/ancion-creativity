@@ -2,6 +2,7 @@ ul.BackLinksWrapper {
     display: flex;
     flex-direction: row;
     align-items: center;
+    padding-left: 0px; 
 }
 ul.BackLinksWrapper li {
     list-style: none;
@@ -32,6 +33,9 @@ ul.BackLinksWrapper li:last-child::before {
 }
 ul.BackLinksWrapper li:last-child::after {
     display: none;
+}
+ul.BackLinksWrapper li:last-child {
+    padding-left: 10px;
 }
 ul.BackLinksWrapper li a:hover {
     color: rgb(204, 0, 102);

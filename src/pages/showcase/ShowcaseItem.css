@@ -1,6 +1,7 @@
 .ShowcaseItemWrapper {
     overflow: hidden;
     box-shadow: rgba(76, 76, 76, 0.5) 3px 3px 6px;
+    border: double rgba(0,0,0,0.3) 5px;
 }
 .ShowcaseItemWrapper img {
     height: 100%;

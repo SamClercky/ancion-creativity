@@ -58,7 +58,7 @@ export default class DetailPage extends React.Component<IDetailPageProps, IDetai
                         <p>{this.state.data.description}</p>
                     </div>
                     <div className="DetailKeywords">
-                        Tags: {this.state.data.keywords.join(", ")}
+                        <p>Tags: {this.state.data.keywords.join(", ")}</p>
                     </div>
                     <div className="DetailSocial">
                         Social media function coming sone...

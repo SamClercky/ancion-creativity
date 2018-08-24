@@ -6,7 +6,8 @@ export interface IShowcaseTileProps {
     onMouseEnter?: (evt: React.MouseEvent) => void,
     onMouseMove?: (evt: React.MouseEvent) => void,
     onMouseLeave?: (evt: React.MouseEvent) => void,
-    title?: string
+    title?: string,
+    prevColor?: number
 }
 
 export default class ShowcaseTile extends React.Component<IShowcaseTileProps, {}> {
@@ -65,10 +66,16 @@ export default class ShowcaseTile extends React.Component<IShowcaseTileProps, {}
     }
 
     private getColor(): React.CSSProperties {
-        let randomIndex = Math.floor(Math.random() * 5)
-        randomIndex = (randomIndex == 5)? 4: randomIndex
+        let colorId = 0
+        if (this.props.prevColor != undefined && this.props.prevColor != -1) {
+            colorId = this.props.prevColor
+        } else {
+            let randomIndex = Math.floor(Math.random() * 5)
+            randomIndex = (randomIndex == 5)? 4: randomIndex
+            colorId = randomIndex
+        }
         return {
-            backgroundColor: themeColors[randomIndex].value
+            backgroundColor: themeColors[colorId].value
         }
     }
 }

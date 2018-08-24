@@ -10,7 +10,9 @@ export interface IData {
     twitterUrl?: string,
     pintrestUrl?: string,
     googleplusUrl?: string,
-    standartComment?: string
+    standartComment?: string,
+    prevColor?: number,
+    isBig: boolean
 }
 
 /**
@@ -76,7 +78,8 @@ export default class ShowcaseData {
             url: `nourl/${Math.floor(Math.random()*100)}`,
             name: "no name",
             description: "no description",
-            keywords: ["no tags"]
+            keywords: ["no tags"],
+            isBig: false
         }
     }
 
